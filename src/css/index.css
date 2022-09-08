@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"); /* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+img {
+  max-width: 100%;
+}
+
+body {
+  font-weight: 500;
+  font-family: "Space Grotesk";
+  font-size: 18px;
+}
+
+main {
+  display: flex;
+}
+
+.first {
+  width: 40%;
+  letter-spacing: 2.5px;
+  color: white;
+  position: relative;
+}
+.first #bg-desktop {
+  width: 100%;
+  height: 100vh;
+}
+.first #bg-mobile {
+  display: none;
+}
+.first .front, .first .back {
+  position: absolute;
+  width: fit-content;
+}
+.first .details {
+  position: absolute;
+  top: 24px;
+  left: 30px;
+  bottom: 20px;
+  right: 20px;
+}
+.first .front {
+  margin-left: 20px;
+  top: 70px;
+  right: -55px;
+}
+.first .back {
+  top: 340px;
+  right: -120px;
+}
+.first .back-details {
+  position: relative;
+}
+.first .number-container {
+  width: fit-content;
+  margin-block: 60px 20px;
+  font-size: 30px;
+}
+.first .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.first .cvc-container {
+  position: relative;
+  width: fit-content;
+  left: 340px;
+  top: -140px;
+}
+
+.second {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1.8px;
+  flex-grow: 1;
+}
+.second form {
+  margin-inline: 130px 30px;
+}
+
+form .confirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  font-size: 28px;
+  display: none;
+}
+form .confirmation button {
+  display: block;
+  margin-top: 30px;
+}
+form .accent-text {
+  color: hsl(279deg, 6%, 55%);
+  font-size: 18px;
+}
+form label {
+  font-size: inherit;
+  display: block;
+  margin-bottom: 7px;
+  color: hsl(278deg, 68%, 11%);
+}
+form .gradient-wrapper {
+  border-radius: 8px;
+  padding: 1px;
+  display: inline-block;
+}
+form .gradient-wrapper:focus-within {
+  background: linear-gradient(hsl(249deg, 99%, 64%), hsl(278deg, 94%, 30%));
+}
+form .big-gradient, form .big-gradient > input {
+  width: 100%;
+}
+form input {
+  border: 1.5px solid hsl(270deg, 3%, 87%);
+  border-radius: 8px;
+  padding: 8px 15px;
+  color: black;
+  outline: none;
+}
+form input::placeholder {
+  color: hsl(279deg, 6%, 55%);
+}
+form .invalid-input {
+  border: 1.5px solid hsl(0deg, 100%, 66%);
+}
+form .error-container {
+  margin-top: 5px;
+  color: hsl(0deg, 100%, 66%);
+  font-size: 15px;
+}
+form #year-errors {
+  background: red;
+}
+form .form-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+form #form-month, form #form-year {
+  width: 100px;
+}
+form #form-cvc {
+  width: 200px;
+}
+form button {
+  width: 100%;
+  border: none;
+  color: white;
+  background-color: hsl(278deg, 68%, 11%);
+  padding-block: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+form .form-control + .form-control {
+  margin-top: 25px;
+}
+
+@media (max-width: 1000px) {
+  body {
+    font-size: max(2.25vw, 14px) !important;
+  }
+  .first {
+    width: auto;
+  }
+  .first .details {
+    top: 10px;
+  }
+  .first .back {
+    right: -55px;
+    margin-left: 20px;
+  }
+  .first .card-footer {
+    padding-right: 10px;
+  }
+  .first .number-container {
+    margin-block: 13% 18px;
+    font-size: max(3vw, 15px);
+  }
+  .first .cvc-container {
+    left: 36vw;
+    top: -15vw;
+  }
+  .second form {
+    margin-left: 80px;
+  }
+}
+@media (max-width: 850px) {
+  .first .number-container {
+    font-size: max(2.9vw, 15px);
+  }
+  .first .back {
+    top: calc(38vw + 20px);
+  }
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 4vw !important;
+  }
+  .main {
+    flex-direction: column;
+    gap: 130px;
+  }
+  .second {
+    margin-inline: 20px;
+  }
+  .second form {
+    margin-inline: auto;
+  }
+  .first {
+    width: 100%;
+  }
+  .first #bg-desktop {
+    display: none;
+  }
+  .first #bg-mobile {
+    display: block;
+    max-height: 40vh;
+    width: 100%;
+  }
+  .first .front {
+    top: 165px;
+    right: -10px;
+    left: 0;
+    margin-right: 30px;
+    z-index: 5;
+  }
+  .first .number-container {
+    margin-block: 60px 20px;
+  }
+  .first .back {
+    top: 30px;
+    right: 20px;
+  }
+  .first .details {
+    top: 20px;
+  }
+  .first .cvc-container {
+    top: -28vw;
+    left: 70vw;
+  }
+  .first .number-container {
+    font-size: 5.5vw;
+  }
+}
+@media (max-width: 450px) {
+  .first .number-container {
+    font-size: 5vw;
+    margin-block: 30px 15px;
+  }
+}
+@media (max-width: 350px) {
+  .first .number-container {
+    margin-block: 15px;
+    font-size: 4.6vw;
+  }
+}/*# sourceMappingURL=index.css.map */

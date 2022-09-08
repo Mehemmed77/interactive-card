@@ -1,0 +1,22 @@
+// Primary
+
+$primary-active-input-border: linear-gradient(
+    hsl(249, 99%, 64%),
+    hsl(278, 94%, 30%)
+);
+
+$primary-input-errors: hsl(0, 100%, 66%);
+
+// Neutral
+$neutral-light-grayish-violet: hsl(270, 3%, 87%);
+$neutral-dark-grayish-violet: hsl(279, 6%, 55%);
+$neutral-very-dark-violet: hsl(278, 68%, 11%);
+
+// FONTS
+$font-size: 18px;
+$font-weight: 500;
+$font-family: "Space Grotesk";
+
+// EXTRA
+
+$border-radius: 8px;

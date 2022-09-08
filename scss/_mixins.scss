@@ -1,0 +1,148 @@
+@mixin flex-align-center-justify-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-wrap{
+    display: flex;
+    flex-wrap:wrap;
+}
+
+@mixin flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin mq{
+    @media (max-width:1000px){
+        body{
+            font-size: max(2.25vw,14px) !important;
+        }
+
+        .first{
+            width: auto;
+            // font-size:15px;
+
+            & .details{
+                top:10px;
+            }
+
+            & .back{
+                right:-55px;
+                margin-left:20px;
+            }
+
+            & .card-footer{
+                padding-right:10px;
+            }
+
+            & .number-container{
+                margin-block:13% 18px;
+                font-size: max(3vw,15px);
+            }
+
+            & .cvc-container{
+                left:36vw;
+                top:-15vw
+            }
+        }
+
+        .second form{
+            margin-left:80px;
+        }
+    }
+
+    @media (max-width:850px){
+        .first .number-container{
+            font-size: max(2.9vw,15px);
+        }
+
+        .first .back{
+            top: calc(38vw + 20px);
+        }
+    }
+
+    @media (max-width:600px){
+        body{
+            font-size: 4vw !important;
+        }
+
+        .main{
+            flex-direction: column;
+            gap:130px;
+        }
+
+        .second{
+            margin-inline:20px;
+        }
+
+        .second form{
+            margin-inline: auto;
+        }
+
+        .first{
+            width:100%;
+
+            & #bg-desktop{
+                display: none;
+            }
+
+            & #bg-mobile{
+                display:block;
+                max-height:40vh;
+                width: 100%;
+            }
+
+            & .front{
+                top:165px;
+                right:-10px;
+                left:0;
+                margin-right:30px;
+                z-index: 5;
+            }
+
+            & .number-container{
+                margin-block:60px 20px;
+            }
+
+            & .back{
+                top:30px;
+                right:20px;
+            }
+
+            .details{
+                top:20px;
+            }
+
+            & .cvc-container{
+                top: -28vw;
+                left: 70vw;
+            }
+
+            & .number-container{
+                font-size: 5.5vw;
+            }
+        }
+    }
+
+    @media (max-width:450px){
+        .first .number-container{
+            font-size:5vw;
+            margin-block:30px 15px;
+        }
+    }
+
+    @media (max-width:350px){
+        .first .number-container{
+            margin-block:15px;
+            font-size:4.6vw;
+        }
+    }
+}
